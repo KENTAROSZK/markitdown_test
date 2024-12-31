@@ -1,0 +1,13 @@
+services:
+  jupyterlab:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jpl-container
+    ports:
+      - "8888:8888" # http://localhost:8888 でjupyterlabへアクセス
+    volumes:
+      - .:/app
+      - ./data:/app/data
+    environment:
+      - JUPYTER_ENABLE_LAB=yes

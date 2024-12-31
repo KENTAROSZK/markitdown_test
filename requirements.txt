@@ -1,0 +1,4 @@
+jupyterlab
+markitdown
+openai
+python-dotenv
