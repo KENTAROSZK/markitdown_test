@@ -14,8 +14,9 @@ RUN git clone --depth 1 https://github.com/microsoft/markitdown.git
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# ポートを公開
+# Jupyter lab環境設定
+## ポートを公開
 EXPOSE 8888
 
-# Jupyter Labを起動
+## Jupyter Labを起動
 CMD ["jupyter-lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--NotebookApp.token=''", "--NotebookApp.password=''"]
